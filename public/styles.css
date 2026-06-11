@@ -1,0 +1,124 @@
+:root {
+  --bg: #0f1419;
+  --card: #1a2129;
+  --border: #2c3640;
+  --text: #e6edf3;
+  --muted: #8b98a5;
+  --accent: #2f81f7;
+  --green: #3fb950;
+  --amber: #d29922;
+  --red: #f85149;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+h1 { font-size: 2rem; }
+.tagline { color: var(--muted); margin-top: 0.4rem; }
+
+#search-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.field label { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+.hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+input[type="text"]:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+.checkbox-field label { font-weight: 400; color: var(--muted); font-size: 0.9rem; cursor: pointer; }
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+button:disabled { opacity: 0.6; cursor: wait; }
+
+#status { margin: 1.5rem 0 0.5rem; }
+#source-chips { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.chip {
+  font-size: 0.78rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.chip.ok { border-color: var(--green); color: var(--green); }
+.chip.fail { border-color: var(--red); color: var(--red); }
+#summary { color: var(--muted); font-size: 0.9rem; }
+
+.job {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  margin-top: 1rem;
+}
+.job h3 { font-size: 1.05rem; }
+.job h3 a { color: var(--accent); text-decoration: none; }
+.job h3 a:hover { text-decoration: underline; }
+.job .meta { color: var(--muted); font-size: 0.88rem; margin: 0.25rem 0 0.5rem; }
+.job .snippet { font-size: 0.9rem; color: var(--text); opacity: 0.85; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.badge.verified { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.badge.unverified { background: rgba(210, 153, 34, 0.15); color: var(--amber); }
+
+/* 30-day freshness meter */
+.freshness { margin-top: 0.6rem; }
+.freshness .bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+.freshness .fill { height: 100%; border-radius: 3px; }
+.freshness .label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; }
+
+.empty, .error {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+}
+.error { color: var(--red); }
+
+footer { margin-top: 3rem; text-align: center; color: var(--muted); font-size: 0.82rem; }
+.hidden { display: none; }

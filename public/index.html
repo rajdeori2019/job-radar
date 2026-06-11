@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobRadar — fresh jobs only, verified dates</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>📡 JobRadar</h1>
+    <p class="tagline">Only roles verifiably posted in the last <strong>30 days</strong>. No ghost jobs, no dead links.</p>
+  </header>
+
+  <main>
+    <form id="search-form" autocomplete="off">
+      <div class="field">
+        <label for="q">What job are you looking for?</label>
+        <input id="q" name="q" type="text" placeholder="e.g. Talent Acquisition Manager, React Developer" required />
+      </div>
+      <div class="field">
+        <label for="location">Where? <span class="hint">(city, country, or leave empty for anywhere)</span></label>
+        <input id="location" name="location" type="text" placeholder="e.g. Bengaluru, London, Remote" />
+      </div>
+      <div class="field checkbox-field">
+        <label>
+          <input id="include-unverified" type="checkbox" />
+          Also show results whose posting date could not be verified (clearly labeled)
+        </label>
+      </div>
+      <button type="submit" id="search-btn">Search fresh jobs</button>
+    </form>
+
+    <section id="status" class="hidden">
+      <div id="source-chips"></div>
+      <p id="summary"></p>
+    </section>
+
+    <section id="results"></section>
+  </main>
+
+  <footer>
+    <p>Open source (MIT) — bring your own free API keys.
+      A date is marked <span class="badge verified">verified</span> only when it comes from a structured API field, never from page text.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
