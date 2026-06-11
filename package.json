@@ -1,0 +1,21 @@
+{
+  "name": "job-radar",
+  "version": "1.0.0",
+  "description": "Open-source job search that only shows roles verifiably posted in the last 30 days. No ghost jobs, no dead links.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test test/"
+  },
+  "keywords": ["job-search", "jobs", "adzuna", "jsearch", "open-source", "recruiting"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
